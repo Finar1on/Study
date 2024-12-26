@@ -1,5 +1,4 @@
-# I'd rather spell it 'Cancelled'
-def filter_by_state(array: list, state: str = "CANCELED") -> list:
+def filter_by_state(array: list, state: str = "EXECUTED") -> list:
     """Function that filters out dictionaries with unwanted state"""
     arrnew = []
     for i in array:
