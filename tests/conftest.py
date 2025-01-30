@@ -1,5 +1,7 @@
 import pytest
 
+from decorators import log
+
 
 @pytest.fixture
 def card_number() -> str:
@@ -80,3 +82,12 @@ def dictgen() -> list:
             "to": "Счет 11776614605963066702",
         },
     ]
+
+
+@pytest.fixture
+def console_log():
+    @log()
+    def func(*args, **kwargs):
+        return sum(args) + sum(kwargs.values())
+
+    return func
